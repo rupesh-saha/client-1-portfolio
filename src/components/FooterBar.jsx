@@ -64,16 +64,16 @@ const FooterBar = () => {
               </h4>
               <div className="flex flex-col gap-4">
                 <a 
-                  href="mailto:ibrahim@example.com" 
+                  href="mailto:ibrahimkhan18042001@gmail.com" 
                   className="text-lg md:text-xl font-light text-gray-200 hover:text-white transition-colors"
                 >
-                  ibrahim@example.com
+                  ibrahimkhan18042001@gmail.com 
                 </a>
                 <a 
                   href="tel:+8801700000000" 
                   className="text-lg md:text-xl font-light text-gray-200 hover:text-white transition-colors"
                 >
-                  +880 1XX XXX XXXX
+                  +880 19744 04417
                 </a>
               </div>
             </motion.div>
@@ -84,10 +84,10 @@ const FooterBar = () => {
               </h4>
               <ul className="flex flex-col gap-3 text-base md:text-lg text-gray-400 font-light">
                 {[
-                  { name: 'LinkedIn', url: 'https://linkedin.com/' },
+                  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ibrahim-hossain-khan/' },
                   { name: 'Google Scholar', url: 'https://scholar.google.com/' },
-                  { name: 'GrabCAD', url: 'https://grabcad.com/' },
-                  { name: 'Facebook', url: 'https://facebook.com/' }
+                  { name: 'GrabCAD', url: 'https://grabcad.com/md.ibrahim.hossain.khan-1' },
+                  { name: 'Facebook', url: 'https://www.facebook.com/ibrahimhossain.ibrahim.33' }
                 ].map((social) => (
                   <li key={social.name}>
                     <a 
