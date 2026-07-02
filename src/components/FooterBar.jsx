@@ -37,6 +37,7 @@ const FooterBar = () => {
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-20 md:mb-32">
           
+          {/* Left Column */}
           <motion.div variants={itemVariants} className="lg:col-span-5 flex flex-col items-start">
             <Link href="/" className="hover:opacity-80 transition-opacity mb-8 inline-block">
               <Image
@@ -44,8 +45,7 @@ const FooterBar = () => {
                 alt="Portfolio Logo"
                 width={160}
                 height={40}
-                // Added w-auto here
-                className="w-32 md:w-40 w-auto h-auto object-contain opacity-90"
+                className="w-32 md:w-40 h-auto object-contain opacity-90"
                 priority
               />
             </Link>
@@ -54,18 +54,21 @@ const FooterBar = () => {
             </p>
           </motion.div>
 
-          <div className="hidden lg:block lg:col-span-2"></div>
+          {/* Spacer - reduced to 1 column to give the right side more breathing room */}
+          <div className="hidden lg:block lg:col-span-1"></div>
 
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-12">
+          {/* Right Column - Switched to Flexbox for automatic spacing */}
+          <div className="lg:col-span-6 flex flex-col sm:flex-row justify-between gap-12 lg:gap-16">
             
-            <motion.div variants={itemVariants} className="flex flex-col">
+            <motion.div variants={itemVariants} className="flex flex-col flex-grow">
               <h4 className="text-xs tracking-[0.2em] text-gray-500 uppercase mb-6 font-semibold">
                 Contact
               </h4>
               <div className="flex flex-col gap-4">
                 <a 
                   href="mailto:ibrahimkhan18042001@gmail.com" 
-                  className="text-lg md:text-xl font-light text-gray-200 hover:text-white transition-colors"
+                  // Added break-all for mobile wrapping, preventing overflow
+                  className="text-lg md:text-xl font-light text-gray-200 hover:text-white transition-colors break-all xl:break-normal"
                 >
                   ibrahimkhan18042001@gmail.com 
                 </a>
@@ -78,7 +81,8 @@ const FooterBar = () => {
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex flex-col">
+            {/* Added a minimum width so Socials never get squished by the email */}
+            <motion.div variants={itemVariants} className="flex flex-col flex-shrink-0 min-w-[150px]">
               <h4 className="text-xs tracking-[0.2em] text-gray-500 uppercase mb-6 font-semibold">
                 Socials
               </h4>
@@ -98,7 +102,6 @@ const FooterBar = () => {
                     >
                       <span className="w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-4"></span>
                       <span className="transform transition-transform duration-300 group-hover:translate-x-1">
-                        {/* Citation tag removed here! */}
                         {social.name}
                       </span>
                     </a>
