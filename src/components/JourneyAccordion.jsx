@@ -37,8 +37,7 @@ const journeyData = [
 ];
 
 const JourneyAccordion = () => {
-  // Track which accordion item is currently open. 'null' means all are closed.
-  const [expandedIndex, setExpandedIndex] = useState(0); // Default to the first item being open
+  const [expandedIndex, setExpandedIndex] = useState(0); 
 
   return (
     <section className="w-full bg-white text-black py-24 md:py-32 px-6 md:px-12 lg:px-20 min-h-screen">
@@ -46,7 +45,7 @@ const JourneyAccordion = () => {
         
         {/* Section Header */}
         <div className="mb-20 text-center md:text-left">
-          <h2 className="text-[12vw] md:text-[8vw] font-bold tracking-tighter leading-none mb-4">
+          <h2 className="text-[12vw] md:text-[5vw] font-bold tracking-tighter leading-none mb-4">
             My Journey
           </h2>
           <div className="w-full h-[1px] bg-black mt-12"></div>
@@ -64,10 +63,10 @@ const JourneyAccordion = () => {
                 onClick={() => setExpandedIndex(isExpanded ? null : index)}
               >
                 {/* Accordion Header */}
-                <div className="py-8 md:py-12 flex items-center justify-between transition-colors duration-300 hover:bg-gray-50 px-4 md:px-8 -mx-4 md:-mx-8 rounded-xl">
+                <div className="py-8 md:py-10 flex items-center justify-between transition-colors duration-300 hover:bg-gray-50 px-4 md:px-8 -mx-4 md:-mx-8 rounded-xl">
                   
-                  {/* Huge Typography for the Title */}
-                  <h3 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black transition-transform duration-300 group-hover:translate-x-2">
+                  {/* Adjusted Typography for the Title */}
+                  <h3 className="text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight text-black transition-transform duration-300 group-hover:translate-x-2">
                     {item.title}
                   </h3>
 

@@ -48,29 +48,19 @@ const Hero = () => {
           Industrial & Production Engineer
         </motion.div>
 
-        {/* Subtitle / Mission */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed mb-10"
-        >
-          A passionate engineer, researcher, and problem solver working at the intersection of <span className="text-white font-medium">advanced manufacturing</span>, <span className="text-white font-medium">design</span>, and <span className="text-white font-medium">intelligent systems</span>.
-        </motion.p>
-
+        
         {/* Call to Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4"
+
         >
           <a href="#research" className="px-8 py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-colors shadow-lg hover:shadow-xl">
             Explore My Research
           </a>
-          <a href="#contact" className="px-8 py-3.5 bg-transparent border border-white/30 text-white text-sm font-semibold rounded-full hover:bg-white/10 transition-colors backdrop-blur-sm">
-            Get in Touch
-          </a>
+          
         </motion.div>
       </div>
 

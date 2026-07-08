@@ -41,17 +41,31 @@ const focusItems = [
   }
 ];
 
-// Added your research interests array here
-const researchInterests = [
-  "Advanced and Additive Manufacturing",
-  "Bio-inspired Design, Compliant Mechanisms, Biomechanics & Biomaterials",
-  "Materials & Microstructural Engineering",
-  "Engineering Design and Manufacturing",
-  "Smart and Sustainable Manufacturing",
-  "Ergonomics, Human Factors Engineering",
-  "CAD/CAM, FEA & Experimental Fatigue",
-  "Robotics, Aerospace, Control & Automation",
-  "Manufacturing Systems Design"
+// NEW: Categorized Research Interests Array
+const categorizedInterests = [
+  {
+    category: "Manufacturing",
+    items: [
+      "Advanced and Additive Manufacturing",
+      "Smart and Hybrid Manufacturing"
+    ]
+  },
+  {
+    category: "Design",
+    items: [
+      "Engineering Design & Solid Mechanics",
+      "Compliant Mechanisms, Topology Optimization",
+      "Biomedical Device Design (Prosthesis and Orthosis), Assistive Technologies & Biomechanics",
+      "Ergonomics (User-centric design), Human Factors Engineering"
+    ]
+  },
+  {
+    category: "Materials",
+    items: [
+      "2D Materials (Molecular Dynamics)",
+      "Computational Modeling"
+    ]
+  }
 ];
 
 const CurrentFocus = () => {
@@ -113,34 +127,47 @@ const CurrentFocus = () => {
           ))}
         </div>
 
-        {/* NEW: Research Interests Badges Section */}
+        {/* NEW: Categorized Research Interests Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           className="flex flex-col items-center md:items-start border-t border-gray-200 pt-12 md:pt-16"
         >
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 w-full">
+          <div className="flex flex-col md:flex-row items-start gap-12 w-full">
             
-            {/* Title for the tags */}
-            <div className="md:w-1/3 flex-shrink-0 text-center md:text-left">
+            {/* Title for the section */}
+            <div className="md:w-1/3 flex-shrink-0 text-center md:text-left sticky top-32">
               <h3 className="text-2xl font-bold text-black mb-2">Core Research Interests</h3>
-              <p className="text-sm text-gray-500 font-light">Areas of deep focus and continuous exploration.</p>
+              <p className="text-sm text-gray-500 font-light">Areas of deep focus categorized by engineering domain.</p>
             </div>
 
-            {/* The Tags Cloud */}
-            <div className="md:w-2/3 flex flex-wrap justify-center md:justify-start gap-3">
-              {researchInterests.map((interest, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: index * 0.05 + 0.2 }}
-                  className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-600 hover:text-black hover:border-black/20 hover:shadow-md transition-all duration-300 cursor-default"
-                >
-                  {interest}
-                </motion.span>
+            {/* The Categorized Tags Container */}
+            <div className="md:w-2/3 flex flex-col gap-10 w-full">
+              {categorizedInterests.map((group, groupIndex) => (
+                <div key={groupIndex} className="flex flex-col w-full">
+                  {/* Category Header */}
+                  <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4 text-center md:text-left border-b border-gray-200 pb-2">
+                    {group.category}
+                  </h4>
+                  
+                  {/* Category Pills */}
+                  <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                    {group.items.map((interest, index) => (
+                      <motion.span
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        // Stagger the animation so they pop in nicely
+                        transition={{ duration: 0.4, delay: (groupIndex * 0.1) + (index * 0.05) + 0.2 }}
+                        className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-600 hover:text-black hover:border-black/20 hover:shadow-md transition-all duration-300 cursor-default"
+                      >
+                        {interest}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
             

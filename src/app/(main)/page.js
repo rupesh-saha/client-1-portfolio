@@ -12,9 +12,9 @@ export default function Home() {
     <Hero/>
     <Marquee/>
     <IntroSec/>
+    <CurrentFocus/>
     <EduSnip/>
     <JourneyAccordion/>
-    <CurrentFocus/>
    </div>
   );
 }
