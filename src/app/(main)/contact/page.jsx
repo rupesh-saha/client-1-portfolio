@@ -4,6 +4,27 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 
+// Array of your core research interests as requested
+const researchInterests = [
+  "Advanced and Additive Manufacturing",
+  "Bio-inspired Design, Compliant Mechanisms",
+  "Biomechanics & Biomaterials",
+  "Materials & Microstructural Engineering",
+  "Engineering Design and Manufacturing",
+  "Smart and Sustainable Manufacturing",
+  "Ergonomics & Human Factors Engineering",
+  "CAD/CAM, FEA & Experimental Fatigue",
+  "Robotics, Aerospace, Control & Automation",
+  "Manufacturing Systems Design"
+];
+
+// Array of social links
+const socialLinks = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ibrahim-hossain-khan/', icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z M2 9h4v12H2z M4 2a2 2 0 11-2 2 2 2 0 012-2z' },
+  { name: 'GrabCAD Profile', url: 'https://grabcad.com/md.ibrahim.hossain.khan-1', icon: 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z M3.27 6.96L12 12.01l8.73-5.05 M12 22.08V12' },
+  { name: 'Facebook', url: 'https://www.facebook.com/ibrahimhossain.ibrahim.33', icon: 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z' }
+];
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,7 +37,7 @@ export default function ContactPage() {
   const glowRef = useRef(null);
   const containerRef = useRef(null);
 
-  // GSAP Mouse Follower Effect (Now a soft, premium aura)
+  // GSAP Mouse Follower Effect
   useEffect(() => {
     const container = containerRef.current;
     const glow = glowRef.current;
@@ -33,8 +54,7 @@ export default function ContactPage() {
         y: y - 250,
         duration: 0.8,
         ease: "power3.out",
-        // The aura gets slightly darker/more focused when hovering the submit button
-        opacity: isHoveringSubmit ? 0.6 : 0.3,
+        opacity: isHoveringSubmit ? 0.6 : 0.2,
         scale: isHoveringSubmit ? 1.1 : 1,
       });
     };
@@ -66,81 +86,148 @@ export default function ContactPage() {
   return (
     <div 
       ref={containerRef}
-      // Apple-style off-white background (#f5f5f7)
       className="min-h-screen bg-[#f5f5f7] text-black pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 lg:px-20 overflow-hidden relative font-sans selection:bg-black selection:text-white"
     >
-      {/* GSAP Mouse Follower Orb (Soft gray shadow aura) */}
+      {/* GSAP Mouse Follower Orb */}
       <div 
         ref={glowRef}
         className="absolute top-0 left-0 w-[500px] h-[500px] bg-gray-400 rounded-full blur-[120px] opacity-0 pointer-events-none mix-blend-multiply z-0"
         style={{ transform: "translate(-50%, -50%)" }}
       ></div>
 
-      {/* Subtle Background Grid (Darker grid lines for light mode) */}
+      {/* Subtle Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none z-0"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
+      <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Left Column: Copy & Info */}
+        {/* Page Header */}
+        <div className="mb-20 text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight text-black leading-[1.1] mb-6"
+          >
+            Get in Touch.
+          </motion.h1>
+        </div>
+
+        {/* SECTION 1: Opportunities (Two-Column Split) */}
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-5 flex flex-col pt-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-24"
         >
-          {/* Availability Badge */}
-          <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8 w-fit px-4 py-2 rounded-full border border-black/10 bg-black/5 backdrop-blur-md">
-            <div className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
+          {/* Box 1: Graduate Research */}
+          <motion.div variants={fadeUp} className="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-200 shadow-sm flex flex-col">
+            <div className="flex items-center gap-3 mb-6 w-fit px-4 py-2 rounded-full border border-gray-200 bg-gray-50">
+              <div className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
+              </div>
+              <span className="text-xs font-semibold tracking-widest text-gray-500 uppercase">
+                Open to Opportunities
+              </span>
             </div>
-            <span className="text-xs font-semibold tracking-widest text-gray-500 uppercase">
-              Open to Opportunities
-            </span>
+            
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Seeking Graduate Research Opportunities</h2>
+            <p className="text-gray-600 font-light leading-relaxed mb-8">
+              I am an Industrial and Production Engineering graduate actively seeking M.S./Ph.D. opportunities aligned with my core research interests. As a dedicated researcher, I am deeply committed to executing milestone-driven work, completing all objectives strictly on time, and proactively learning new skills to bridge any knowledge gaps. I welcome the opportunity to join your lab and would be glad to discuss how my background supports your current projects during a brief online meeting.
+            </p>
+
+            <h3 className="text-sm font-bold tracking-widest text-gray-400 uppercase mb-4">Core Research Interests</h3>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {researchInterests.map((interest, i) => (
+                <span key={i} className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-gray-600">
+                  {interest}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-bold tracking-tight text-black leading-[1.1] mb-6">
-            Let&apos;s build <br />
-            <span className="text-gray-400">something</span> <br />
-            meaningful.
-          </motion.h1>
-
-          <motion.p variants={fadeUp} className="text-lg md:text-xl text-gray-500 font-light leading-relaxed mb-16 max-w-md">
-            Whether it is a research collaboration, engineering challenge, or discussing the future of advanced manufacturing—my inbox is always open.
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="flex flex-col gap-8">
-            <div>
-              <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-2">Direct Line</h4>
-              <a href="mailto:ibrahimkhan18042001@gmail.com" className="text-xl md:text-2xl font-medium text-black hover:text-gray-500 transition-colors inline-block group break-all">
-                ibrahimkhan18042001@gmail.com
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[2px] bg-black mt-1"></span>
-              </a>
+          {/* Box 2: Collaboration */}
+          <motion.div variants={fadeUp} className="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-200 shadow-sm flex flex-col">
+             <div className="flex items-center gap-3 mb-6 w-fit px-4 py-2 rounded-full border border-gray-200 bg-gray-50">
+              <div className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
+              </div>
+              <span className="text-xs font-semibold tracking-widest text-gray-500 uppercase">
+                Open to Opportunities
+              </span>
             </div>
-            <div>
-              <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-2">Location</h4>
-              <p className="text-xl md:text-2xl font-medium text-black">
-                Dhaka, Bangladesh
-              </p>
-            </div>
+
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Collaborate & Let&apos;s Build Something Meaningful</h2>
+            <p className="text-gray-600 font-light leading-relaxed mb-8">
+              I am always thrilled to connect with and support current B.Sc. students who share a passion for engineering and discovery. I am always open to collaborating. I am actively ready to guide you on your projects, and I am equally excited to learn from your fresh ideas and perspectives. Whether it is a research collaboration, a hands-on engineering challenge, or discussing the future of additive manufacturing, user-centric design, and new materials, my inbox is always open.
+            </p>
           </motion.div>
         </motion.div>
 
-        {/* Spacer */}
-        <div className="hidden lg:block lg:col-span-1"></div>
 
-        {/* Right Column: The Pure White Form */}
+        {/* SECTION 2: Direct Contact & Socials Grid */}
         <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          // Pure white card with an elegant, soft drop shadow
-          className="lg:col-span-6 bg-white border border-gray-200 rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-24 flex flex-col md:flex-row gap-12 lg:gap-24 justify-center items-start md:items-center py-12 border-y border-gray-200"
         >
+          {/* Emails & Phone */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">Direct Contact</h4>
+            <div className="flex flex-col gap-3">
+              <a href="mailto:ibrahimhossain2@iut-dhaka.edu" className="text-lg md:text-xl font-medium text-black hover:text-gray-500 transition-colors">ibrahimhossain2@iut-dhaka.edu</a>
+              <a href="mailto:ibrahimkhan18042001@gmail.com" className="text-lg md:text-xl font-medium text-black hover:text-gray-500 transition-colors">ibrahimkhan18042001@gmail.com</a>
+              <a href="tel:+8801974404417" className="text-lg md:text-xl font-medium text-black hover:text-gray-500 transition-colors mt-2">+880 19744 04417</a>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">Connect</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
+              {socialLinks.map((link, i) => (
+                <a 
+                  key={i} 
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-lg font-medium text-gray-600 hover:text-black transition-colors group"
+                >
+                  <svg className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={link.icon}></path>
+                  </svg>
+                  {link.name}
+                </a>
+              ))}
+              <span className="flex items-center gap-3 text-lg font-medium text-gray-400 cursor-not-allowed">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                </svg>
+                Website (Coming Soon)
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+
+        {/* SECTION 3: The Pure White Form */}
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-[2rem] p-8 md:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group"
+        >
+          <div className="mb-12 text-center">
+             <h2 className="text-3xl font-bold mb-2">Send a Message</h2>
+             <p className="text-gray-500 font-light">I'll get back to you as soon as possible.</p>
+          </div>
+
           <form onSubmit={handleSubmit} className="flex flex-col gap-10 relative z-10">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {/* Name Input */}
               <div className="relative">
                 <input 
                   type="text" 
@@ -149,7 +236,6 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  // Light mode input styling
                   className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
                   placeholder="John Doe"
                 />
@@ -161,7 +247,6 @@ export default function ContactPage() {
                 </label>
               </div>
 
-              {/* Email Input */}
               <div className="relative">
                 <input 
                   type="email" 
@@ -182,7 +267,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Subject Input */}
             <div className="relative">
               <input 
                 type="text" 
@@ -202,7 +286,6 @@ export default function ContactPage() {
               </label>
             </div>
 
-            {/* Message Input */}
             <div className="relative">
               <textarea 
                 id="message"
@@ -222,16 +305,14 @@ export default function ContactPage() {
               </label>
             </div>
 
-            {/* Submit Button */}
             <div 
-              className="mt-6"
+              className="mt-6 flex justify-center"
               onMouseEnter={() => setIsHoveringSubmit(true)}
               onMouseLeave={() => setIsHoveringSubmit(false)}
             >
               <button 
                 type="submit"
-                // Pitch black button for maximum contrast
-                className="w-full md:w-auto bg-black text-white font-bold tracking-wide py-4 px-10 rounded-full flex items-center justify-center gap-3 hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
+                className="w-full md:w-auto bg-black text-white font-bold tracking-wide py-4 px-12 rounded-full flex items-center justify-center gap-3 hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
               >
                 Send Message
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
