@@ -80,7 +80,7 @@ const projectsData = [
       "Functional Innovation: Enabled automated paste flow straight through the bristles to maximize user convenience and efficiency.",
       "User Experience: Focused on optimizing usability, ergonomics, and structural design to deliver an enhanced oral care experience."
     ],
-    images: ["/placeholder-1.jpg", "/placeholder-2.png"],
+    images: ["/placeholder25.png", "/placeholder26.JPG","/placeholder27.png", "/placeholder28.png","/placeholder29.png"],
     isSpecial: false
   },
   {
@@ -94,7 +94,7 @@ const projectsData = [
       "User-Friendly Design: Compact, lightweight, and locally manufacturable for easy use in rural areas.",
       "High Capacity: Dries 1000–2000 kg per batch with improved safety, hygiene, and energy efficiency."
     ],
-    images: ["/placeholder-1.jpg", "/placeholder-2.png"],
+    images: ["/placeholder30.png", "/placeholder31.png","/placeholder32.png", "/placeholder33.png","/placeholder34.JPG","placeholder35.png",'placeholder36.png'],
     isSpecial: false
   },
   {
@@ -106,7 +106,7 @@ const projectsData = [
       "Smart Integration: Integrated a 3-axis motorized laptop stand that aligns flush with the surface when not in use.",
       "Mechanical Innovation: Developed foldable hand rests for enhanced comfort alongside an innovative rotation-to-linear keyboard drawer mechanism."
     ],
-    images: ["/placeholder-1.jpg", "/placeholder-2.png"],
+    images: ["/placeholder37.png", "/placeholder81.png","/placeholder39.JPG", "/placeholder40.png","/placeholder41.png","placeholder42.png",'placeholder43.JPG','placeholder44.JPG'],
     isSpecial: false
   },
   {
@@ -119,7 +119,7 @@ const projectsData = [
       "The High-Risk Zone: Pinpointed the femoral neck as the precise hotspot where peak stress and deformation collide, directly mapping out why this area is so prone to hip fractures.",
       "Smart Orthotics Blueprint: Provided the exact load-bearing data needed to develop custom, sensor-mapped orthotics that can track bone strain in real time and prevent injuries before they happen."
     ],
-    images: ["/placeholder-1.jpg", "/placeholder-2.png"],
+    images: ["/placeholder45.png", "/placeholder46.png","/placeholder47.JPG", "/placeholder48.png","/placeholder49.jpg","placeholder50.png",'placeholder51.jpg','placeholder52.jpg','placeholder53.jpg'],
     isSpecial: false
   },
   {
@@ -127,7 +127,7 @@ const projectsData = [
     title: "SEVERAL PROJECTS ON MACHINE, INSTRUMENTS, INDUSTRIAL, PRODUCT, AND MECHANISMS DESIGN",
     software: "SolidWorks, KeyShot",
     description: [],
-    images: ["/placeholder-1.jpg", "/placeholder-2.png", "/placeholder-3.jpg", "/placeholder-1.jpg"],
+    images: ["/placeholder54.png", "/placeholder55.png","/placeholder56.png", "/placeholder57.png","/placeholder58.png","placeholder58.png",'placeholder60.png','placeholder61.JPG','placeholder62.png','placeholder63.png','placeholder64.png','placeholder65.png'],
     isSpecial: true 
   }
 ];
