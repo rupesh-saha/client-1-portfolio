@@ -1,11 +1,9 @@
-import { Montserrat } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
 });
 
 export const metadata = {
@@ -18,9 +16,9 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="light"
-      className={`${montserrat.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${inter.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className={`${montserrat.className} min-h-full flex flex-col`} suppressHydrationWarning>
+      <body className={`${inter.className} min-h-full flex flex-col`} suppressHydrationWarning>
         {children}
       </body>
     </html>

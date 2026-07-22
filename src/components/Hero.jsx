@@ -31,10 +31,10 @@ const Hero = () => {
 
         {/* Main Name Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight"
+          transition={{ duration: 1, type: "spring", bounce: 0.2, delay: 0.2 }}
+          className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 mb-6 leading-tight drop-shadow-2xl"
         >
           MD IBRAHIM <br className="md:hidden" /> HOSSAIN KHAN
         </motion.h1>
@@ -42,8 +42,8 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="uppercase tracking-[0.3em] text-xs md:text-sm text-gray-400 mb-6 font-semibold"
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+          className="uppercase tracking-[0.4em] text-xs md:text-sm text-gray-300 mb-6 font-bold drop-shadow-md"
         >
           Industrial & Production Engineer
         </motion.div>
@@ -57,7 +57,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4"
 
         >
-          <a href="#research" className="px-8 py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-colors shadow-lg hover:shadow-xl">
+          <a href="#research" className="px-8 py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-1">
             Explore My Research
           </a>
           

@@ -20,7 +20,7 @@ const NavBar = () => {
 
   return (
 
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[95%] bg-black/30 backdrop-blur-xl rounded-full px-4 py-3 flex items-center justify-between shadow-2xl border border-white/10 z-50 transition-all duration-300">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[95%] bg-black/70 backdrop-blur-2xl rounded-full px-4 py-3 flex items-center justify-between shadow-2xl border border-white/20 z-50 transition-all duration-300">
       
       {/* Left Section: Logo */}
       <div className="flex-shrink-0 flex items-center pl-2">
@@ -54,7 +54,7 @@ const NavBar = () => {
               }`}
             >
               {isActive && (
-                <span className="text-[10px] font-bold text-gray-500 tracking-widest mt-[2px]">
+                <span className="text-[10px] font-bold text-gray-400 tracking-widest mt-[2px]">
                   {item.num}
                 </span>
               )}
