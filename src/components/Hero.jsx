@@ -2,18 +2,19 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-[#050505]">
-      
+
       {/* 1. Background Video */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover scale-105" 
+        className="absolute inset-0 w-full h-full object-cover scale-105"
       >
         {/* Make sure the video is in your public folder */}
         <source src="/lunar-rover.mp4" type="video/mp4" />
@@ -25,9 +26,9 @@ const Hero = () => {
 
       {/* 3. Foreground Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto mt-16">
-        
+
         {/* Eyebrow Text */}
-        
+
 
         {/* Main Name Heading */}
         <motion.h1
@@ -48,7 +49,7 @@ const Hero = () => {
           Industrial & Production Engineer
         </motion.div>
 
-        
+
         {/* Call to Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,10 +58,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4"
 
         >
-          <a href="#research" className="px-8 py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-1">
+          <Link href="/research" className="px-8 py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-1">
             Explore My Research
-          </a>
-          
+          </Link>
+
         </motion.div>
       </div>
 
@@ -72,13 +73,13 @@ const Hero = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
         <span className="text-[10px] uppercase tracking-widest text-gray-400 font-medium">Scroll</span>
-        <motion.div 
-          animate={{ y: [0, 8, 0] }} 
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
           className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent"
         ></motion.div>
       </motion.div>
-      
+
     </section>
   );
 };

@@ -6,16 +6,9 @@ import gsap from 'gsap';
 
 // Array of your core research interests as requested
 const researchInterests = [
-  "Advanced and Additive Manufacturing",
-  "Bio-inspired Design, Compliant Mechanisms",
-  "Biomechanics & Biomaterials",
-  "Materials & Microstructural Engineering",
-  "Engineering Design and Manufacturing",
-  "Smart and Sustainable Manufacturing",
-  "Ergonomics & Human Factors Engineering",
-  "CAD/CAM, FEA & Experimental Fatigue",
-  "Robotics, Aerospace, Control & Automation",
-  "Manufacturing Systems Design"
+  "Material",
+  "Design and manufacturing",
+  "Ergonomics"
 ];
 
 // Array of social links
