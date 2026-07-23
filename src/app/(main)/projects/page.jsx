@@ -21,7 +21,7 @@ const projectsData = [
       "I am focused on advancing my expertise in compliant mechanisms, topology optimization, medical devices, assistive technology, and additive manufacturing to lay a strong foundation for my upcoming graduate studies.",
       "Driven by a commitment to continuous learning, I am actively building projects in these areas to sharpen my technical skills and prepare for meaningful academic research."
     ],
-    images: ["/placeholder1.png", "/placeholder2.png"], 
+    images: ["/placeholder1.png", "/placeholder2.png"],
     isSpecial: false
   },
   {
@@ -33,7 +33,7 @@ const projectsData = [
       "Vibration Control: Incorporated PORON foam and rubber damping layers to actively minimize tool vibration.",
       "Biomechanical Testing: Validated the ergonomic improvements through empirical testing using EMG and vibration sensors."
     ],
-    images: ["/placeholder3.png", "/placeholder4.png","/placeholder5.png", "/placeholder6.jpeg","/placeholder7.png", "/placeholder8.png","/placeholder9.jpeg"],
+    images: ["/placeholder3.png", "/placeholder4.png", "/placeholder5.png", "/placeholder6.jpeg", "/placeholder7.png", "/placeholder8.png", "/placeholder9.jpeg"],
     isSpecial: false
   },
   {
@@ -45,7 +45,7 @@ const projectsData = [
       "Site Selection: Selected and justified an optimal Martian location for long-term human settlement based on resource availability.",
       "Global Recognition: Personally presented the project through a successful interview evaluation, securing 4th position globally in the international Mars Base Challenge."
     ],
-    images: ["/placeholder10.png", "/placeholder11.png","/placeholder12.png", "/placeholder13.png","/placeholder14.JPG"],
+    images: ["/placeholder10.png", "/placeholder11.png", "/placeholder12.png", "/placeholder13.png", "/placeholder14.JPG"],
     isSpecial: false
   },
   {
@@ -58,17 +58,16 @@ const projectsData = [
       "Navigation & Power: Equipped the rover with onboard sensors and cameras for hazard detection, alongside a solar-powered energy system for long-term operational reliability."
     ],
     images: ["/placeholder15.jpeg", "/placeholder16.jpeg","/placeholder17.png", "/placeholder18.png","/placeholder19.JPG"],
-    isSpecial: false
-  },
-  {
-    id: "rover-analysis",
-    title: "ROVER DESIGN CHALLENGE (Analysis)",
-    software: "SolidWorks, ANSYS, KeyShot, Blender",
-    description: [
-      "Structural Evaluation: Performed comprehensive structural analysis of the rover chassis using ANSYS to evaluate overall strength, durability, and load-bearing performance under mission-specific conditions.",
-      "Reliability Analysis: Assessed deformation characteristics and structural integrity under stress to ensure the chassis remains reliable and secure during operations."
+    subSections: [
+      {
+        title: "ROVER DESIGN CHALLENGE (Analysis)",
+        description: [
+          "Structural Evaluation: Performed comprehensive structural analysis of the rover chassis using ANSYS to evaluate overall strength, durability, and load-bearing performance under mission-specific conditions.",
+          "Reliability Analysis: Assessed deformation characteristics and structural integrity under stress to ensure the chassis remains reliable and secure during operations."
+        ],
+        images: ["/placeholder20.png", "/placeholder21.png","/placeholder22.png", "/placeholder23.png","/placeholder24.png"]
+      }
     ],
-    images: ["/placeholder20.png", "/placeholder21.png","/placeholder22.png", "/placeholder23.png","/placeholder24.png"],
     isSpecial: false
   },
   {
@@ -80,7 +79,7 @@ const projectsData = [
       "Functional Innovation: Enabled automated paste flow straight through the bristles to maximize user convenience and efficiency.",
       "User Experience: Focused on optimizing usability, ergonomics, and structural design to deliver an enhanced oral care experience."
     ],
-    images: ["/placeholder25.png", "/placeholder26.JPG","/placeholder27.png", "/placeholder28.png","/placeholder29.png"],
+    images: ["/placeholder25.png", "/placeholder26.JPG", "/placeholder27.png", "/placeholder28.png", "/placeholder29.png"],
     isSpecial: false
   },
   {
@@ -94,7 +93,7 @@ const projectsData = [
       "User-Friendly Design: Compact, lightweight, and locally manufacturable for easy use in rural areas.",
       "High Capacity: Dries 1000–2000 kg per batch with improved safety, hygiene, and energy efficiency."
     ],
-    images: ["/placeholder30.png", "/placeholder31.png","/placeholder32.png", "/placeholder33.png","/placeholder34.JPG","placeholder35.png",'placeholder36.png'],
+    images: ["/placeholder30.png", "/placeholder31.png", "/placeholder32.png", "/placeholder33.png", "/placeholder34.JPG", "placeholder35.png", 'placeholder36.png'],
     isSpecial: false
   },
   {
@@ -106,7 +105,7 @@ const projectsData = [
       "Smart Integration: Integrated a 3-axis motorized laptop stand that aligns flush with the surface when not in use.",
       "Mechanical Innovation: Developed foldable hand rests for enhanced comfort alongside an innovative rotation-to-linear keyboard drawer mechanism."
     ],
-    images: ["/placeholder37.png", "/placeholder81.png","/placeholder39.JPG", "/placeholder40.png","/placeholder41.png","placeholder42.png",'placeholder43.JPG','placeholder44.JPG'],
+    images: ["/placeholder37.png", "/placeholder81.png", "/placeholder39.JPG", "/placeholder40.png", "/placeholder41.png", "placeholder42.png", 'placeholder43.JPG', 'placeholder44.JPG'],
     isSpecial: false
   },
   {
@@ -119,7 +118,7 @@ const projectsData = [
       "The High-Risk Zone: Pinpointed the femoral neck as the precise hotspot where peak stress and deformation collide, directly mapping out why this area is so prone to hip fractures.",
       "Smart Orthotics Blueprint: Provided the exact load-bearing data needed to develop custom, sensor-mapped orthotics that can track bone strain in real time and prevent injuries before they happen."
     ],
-    images: ["/placeholder45.png", "/placeholder46.png","/placeholder47.JPG", "/placeholder48.png","/placeholder49.jpg","placeholder50.png",'placeholder51.jpg','placeholder52.jpg','placeholder53.jpg'],
+    images: ["/placeholder45.png", "/placeholder46.png", "/placeholder47.JPG", "/placeholder48.png", "/placeholder49.jpg", "placeholder50.png", 'placeholder51.jpg', 'placeholder52.jpg', 'placeholder53.jpg'],
     isSpecial: false
   },
   {
@@ -127,8 +126,8 @@ const projectsData = [
     title: "SEVERAL PROJECTS ON MACHINE, INSTRUMENTS, INDUSTRIAL, PRODUCT, AND MECHANISMS DESIGN",
     software: "SolidWorks, KeyShot",
     description: [],
-    images: ["/placeholder54.png", "/placeholder55.png","/placeholder56.png", "/placeholder57.png","/placeholder58.png","placeholder58.png",'placeholder60.png','placeholder61.JPG','placeholder62.png','placeholder63.png','placeholder64.png','placeholder65.png'],
-    isSpecial: true 
+    images: ["/placeholder54.png", "/placeholder55.png", "/placeholder56.png", "/placeholder57.png", "/placeholder58.png", "placeholder58.png", 'placeholder60.png', 'placeholder61.JPG', 'placeholder62.png', 'placeholder63.png', 'placeholder64.png', 'placeholder65.png'],
+    isSpecial: true
   }
 ];
 
@@ -151,7 +150,7 @@ export default function ProjectsPage() {
         }
       );
     });
-    
+
     // Disable body scroll when modal is open
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
@@ -173,7 +172,7 @@ export default function ProjectsPage() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#f5f5f7] text-black pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 lg:px-20 font-sans selection:bg-black selection:text-white">
-      
+
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-20 md:mb-32">
         <h2 className="text-sm font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">Portfolio</h2>
@@ -185,30 +184,30 @@ export default function ProjectsPage() {
       {/* Main Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {projectsData.map((project) => (
-          <div 
-            key={project.id} 
+          <div
+            key={project.id}
             className="project-card group cursor-pointer flex flex-col gap-6"
             onClick={() => setSelectedProject(project)}
           >
             {/* Project Card Cover */}
             <div className="w-full aspect-[4/3] rounded-3xl bg-gray-200 border border-gray-300 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500">
               {project.images[0] ? (
-                <img 
-                  src={project.images[0]} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium">Cover Image Placeholder</div>
               )}
-              
+
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                 <span className="bg-white text-black px-6 py-3 rounded-full font-bold uppercase tracking-widest text-xs shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   View Project
                 </span>
               </div>
             </div>
-            
+
             {/* Project Titles */}
             <div>
               <h3 className="text-xl md:text-2xl font-bold leading-snug mb-2 group-hover:text-gray-600 transition-colors">
@@ -226,7 +225,7 @@ export default function ProjectsPage() {
       {/* FULL-SCREEN OVERLAY (Acts as the "New Route") */}
       <AnimatePresence>
         {selectedProject && (
-          <motion.div 
+          <motion.div
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100%", opacity: 0 }}
@@ -235,7 +234,7 @@ export default function ProjectsPage() {
           >
             {/* Sticky Header with Back Button */}
             <div className="sticky top-0 w-full bg-[#fafafa]/80 backdrop-blur-xl border-b border-gray-200 z-[110] px-6 py-6 md:px-12 flex justify-between items-center">
-              <button 
+              <button
                 onClick={() => setSelectedProject(null)}
                 className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-gray-500 transition-colors"
               >
@@ -245,9 +244,9 @@ export default function ProjectsPage() {
             </div>
 
             <div className="max-w-5xl mx-auto pt-20 pb-32 px-6 md:px-12">
-              
+
               {/* Title & Software */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -263,7 +262,7 @@ export default function ProjectsPage() {
 
               {/* Description */}
               {!selectedProject.isSpecial && selectedProject.description.length > 0 && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -296,6 +295,49 @@ export default function ProjectsPage() {
                   </motion.div>
                 ))}
               </motion.div>
+
+              {/* Sub-sections if any */}
+              {selectedProject.subSections && selectedProject.subSections.map((sub, idx) => (
+                <div key={idx} className="mt-20 pt-20 border-t border-gray-200">
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">{sub.title}</h2>
+                  {sub.description && sub.description.length > 0 && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.6 }}
+                      className="mb-16 space-y-6 text-lg text-gray-600 font-light leading-relaxed border-l-2 border-black pl-6"
+                    >
+                      {sub.description.map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </motion.div>
+                  )}
+                  {sub.images && sub.images.length > 0 && (
+                    <motion.div 
+                      variants={containerVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: "-100px" }}
+                      className="flex flex-col gap-8 md:gap-16"
+                    >
+                      {sub.images.map((img, i) => (
+                        <motion.div 
+                          key={i} 
+                          variants={imageVariants}
+                          className="w-full bg-gray-100 rounded-3xl overflow-hidden shadow-lg border border-gray-200"
+                        >
+                          <img 
+                            src={img} 
+                            alt={`${sub.title} detail ${i + 1}`} 
+                            className="w-full h-auto object-contain"
+                          />
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
+              ))}
 
             </div>
           </motion.div>

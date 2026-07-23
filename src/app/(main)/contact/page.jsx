@@ -6,9 +6,16 @@ import gsap from 'gsap';
 
 // Array of your core research interests as requested
 const researchInterests = [
-  "Material",
-  "Design and manufacturing",
-  "Ergonomics"
+  "Advanced and Additive Manufacturing",
+  "Bio-inspired Design, Compliant Mechanisms",
+  "Biomechanics & Biomaterials",
+  "Materials & Microstructural Engineering",
+  "Engineering Design and Manufacturing",
+  "Smart and Sustainable Manufacturing",
+  "Ergonomics & Human Factors Engineering",
+  "CAD/CAM, FEA & Experimental Fatigue",
+  "Robotics, Aerospace, Control & Automation",
+  "Manufacturing Systems Design"
 ];
 
 // Array of social links
@@ -43,7 +50,7 @@ export default function ContactPage() {
       const y = e.clientY - rect.top;
 
       gsap.to(glow, {
-        x: x - 250, 
+        x: x - 250,
         y: y - 250,
         duration: 0.8,
         ease: "power3.out",
@@ -77,12 +84,12 @@ export default function ContactPage() {
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="min-h-screen bg-[#f5f5f7] text-black pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 lg:px-20 overflow-hidden relative font-sans selection:bg-black selection:text-white"
     >
       {/* GSAP Mouse Follower Orb */}
-      <div 
+      <div
         ref={glowRef}
         className="absolute top-0 left-0 w-[500px] h-[500px] bg-gray-400 rounded-full blur-[120px] opacity-0 pointer-events-none mix-blend-multiply z-0"
         style={{ transform: "translate(-50%, -50%)" }}
@@ -92,10 +99,10 @@ export default function ContactPage() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Page Header */}
         <div className="mb-20 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-bold tracking-tight text-black leading-[1.1] mb-6"
@@ -105,7 +112,7 @@ export default function ContactPage() {
         </div>
 
         {/* SECTION 1: Opportunities (Two-Column Split) */}
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
@@ -122,7 +129,7 @@ export default function ContactPage() {
                 Open to Opportunities
               </span>
             </div>
-            
+
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Seeking Graduate Research Opportunities</h2>
             <p className="text-gray-600 font-light leading-relaxed mb-8">
               I am an Industrial and Production Engineering graduate actively seeking M.S./Ph.D. opportunities aligned with my core research interests. As a dedicated researcher, I am deeply committed to executing milestone-driven work, completing all objectives strictly on time, and proactively learning new skills to bridge any knowledge gaps. I welcome the opportunity to join your lab and would be glad to discuss how my background supports your current projects during a brief online meeting.
@@ -140,7 +147,7 @@ export default function ContactPage() {
 
           {/* Box 2: Collaboration */}
           <motion.div variants={fadeUp} className="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-200 shadow-sm flex flex-col">
-             <div className="flex items-center gap-3 mb-6 w-fit px-4 py-2 rounded-full border border-gray-200 bg-gray-50">
+            <div className="flex items-center gap-3 mb-6 w-fit px-4 py-2 rounded-full border border-gray-200 bg-gray-50">
               <div className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
@@ -159,7 +166,7 @@ export default function ContactPage() {
 
 
         {/* SECTION 2: Direct Contact & Socials Grid */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -181,10 +188,10 @@ export default function ContactPage() {
             <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">Connect</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
               {socialLinks.map((link, i) => (
-                <a 
-                  key={i} 
-                  href={link.url} 
-                  target="_blank" 
+                <a
+                  key={i}
+                  href={link.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-lg font-medium text-gray-600 hover:text-black transition-colors group"
                 >
@@ -206,7 +213,7 @@ export default function ContactPage() {
 
 
         {/* SECTION 3: The Pure White Form */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -214,16 +221,16 @@ export default function ContactPage() {
           className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-[2rem] p-8 md:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group"
         >
           <div className="mb-12 text-center">
-             <h2 className="text-3xl font-bold mb-2">Send a Message</h2>
-             <p className="text-gray-500 font-light">I'll get back to you as soon as possible.</p>
+            <h2 className="text-3xl font-bold mb-2">Send a Message</h2>
+            <p className="text-gray-500 font-light">I'll get back to you as soon as possible.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-10 relative z-10">
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="relative">
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   id="name"
                   name="name"
                   value={formData.name}
@@ -232,8 +239,8 @@ export default function ContactPage() {
                   className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
                   placeholder="John Doe"
                 />
-                <label 
-                  htmlFor="name" 
+                <label
+                  htmlFor="name"
                   className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
                 >
                   What's your name?
@@ -241,8 +248,8 @@ export default function ContactPage() {
               </div>
 
               <div className="relative">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   id="email"
                   name="email"
                   value={formData.email}
@@ -251,8 +258,8 @@ export default function ContactPage() {
                   className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
                   placeholder="john@example.com"
                 />
-                <label 
-                  htmlFor="email" 
+                <label
+                  htmlFor="email"
                   className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
                 >
                   Your email address
@@ -261,8 +268,8 @@ export default function ContactPage() {
             </div>
 
             <div className="relative">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="subject"
                 name="subject"
                 value={formData.subject}
@@ -271,8 +278,8 @@ export default function ContactPage() {
                 className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
                 placeholder="Collaboration"
               />
-              <label 
-                htmlFor="subject" 
+              <label
+                htmlFor="subject"
                 className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
               >
                 Subject
@@ -280,7 +287,7 @@ export default function ContactPage() {
             </div>
 
             <div className="relative">
-              <textarea 
+              <textarea
                 id="message"
                 name="message"
                 value={formData.message}
@@ -290,20 +297,20 @@ export default function ContactPage() {
                 className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent resize-none"
                 placeholder="Tell me about your project..."
               ></textarea>
-              <label 
-                htmlFor="message" 
+              <label
+                htmlFor="message"
                 className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
               >
                 Tell me about your project...
               </label>
             </div>
 
-            <div 
+            <div
               className="mt-6 flex justify-center"
               onMouseEnter={() => setIsHoveringSubmit(true)}
               onMouseLeave={() => setIsHoveringSubmit(false)}
             >
-              <button 
+              <button
                 type="submit"
                 className="w-full md:w-auto bg-black text-white font-bold tracking-wide py-4 px-12 rounded-full flex items-center justify-center gap-3 hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
               >
