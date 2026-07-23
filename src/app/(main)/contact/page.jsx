@@ -4,18 +4,24 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 
-// Array of your core research interests as requested
-const researchInterests = [
-  "Advanced and Additive Manufacturing",
-  "Bio-inspired Design, Compliant Mechanisms",
-  "Biomechanics & Biomaterials",
-  "Materials & Microstructural Engineering",
-  "Engineering Design and Manufacturing",
-  "Smart and Sustainable Manufacturing",
-  "Ergonomics & Human Factors Engineering",
-  "CAD/CAM, FEA & Experimental Fatigue",
-  "Robotics, Aerospace, Control & Automation",
-  "Manufacturing Systems Design"
+const researchCategories = [
+  {
+    category: "MANUFACTURING",
+    interests: ["Advanced and Additive Manufacturing", "Smart and Hybrid Manufacturing"]
+  },
+  {
+    category: "DESIGN",
+    interests: [
+      "Engineering Design & Solid Mechanics", 
+      "Compliant Mechanisms, Topology Optimization", 
+      "Biomedical Device Design (Prosthesis and Orthosis), Assistive Technologies & Biomechanics", 
+      "Ergonomics (User-centric design), Human Factors Engineering"
+    ]
+  },
+  {
+    category: "MATERIALS",
+    interests: ["2D Materials (Molecular Dynamics)", "Computational Modeling"]
+  }
 ];
 
 // Array of social links
@@ -135,14 +141,6 @@ export default function ContactPage() {
               I am an Industrial and Production Engineering graduate actively seeking M.S./Ph.D. opportunities aligned with my core research interests. As a dedicated researcher, I am deeply committed to executing milestone-driven work, completing all objectives strictly on time, and proactively learning new skills to bridge any knowledge gaps. I welcome the opportunity to join your lab and would be glad to discuss how my background supports your current projects during a brief online meeting.
             </p>
 
-            <h3 className="text-sm font-bold tracking-widest text-gray-400 uppercase mb-4">Core Research Interests</h3>
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {researchInterests.map((interest, i) => (
-                <span key={i} className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-gray-600">
-                  {interest}
-                </span>
-              ))}
-            </div>
           </motion.div>
 
           {/* Box 2: Collaboration */}
@@ -162,6 +160,39 @@ export default function ContactPage() {
               I am always thrilled to connect with and support current B.Sc. students who share a passion for engineering and discovery. I am always open to collaborating. I am actively ready to guide you on your projects, and I am equally excited to learn from your fresh ideas and perspectives. Whether it is a research collaboration, a hands-on engineering challenge, or discussing the future of additive manufacturing, user-centric design, and new materials, my inbox is always open.
             </p>
           </motion.div>
+        </motion.div>
+
+        {/* SECTION 1.5: Core Research Interests */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-32 flex flex-col lg:flex-row gap-12 lg:gap-24 items-start"
+        >
+          {/* Left Side: Title */}
+          <div className="lg:w-1/3 flex flex-col sticky top-32">
+            <h2 className="text-3xl font-bold mb-2 text-black">Core Research Interests</h2>
+            <p className="text-gray-500 font-light">Areas of deep focus categorized by engineering domain.</p>
+          </div>
+
+          {/* Right Side: Categories */}
+          <div className="lg:w-2/3 flex flex-col gap-12">
+            {researchCategories.map((group, idx) => (
+              <div key={idx} className="flex flex-col">
+                <h3 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-6 border-b border-gray-200 pb-3">
+                  {group.category}
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {group.interests.map((interest, i) => (
+                    <span key={i} className="px-5 py-2.5 bg-white border border-gray-100 rounded-full text-sm font-medium text-gray-600 shadow-[0_2px_15px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300">
+                      {interest}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
 
