@@ -46,6 +46,7 @@ const projectsData = [
       "Global Recognition: Personally presented the project through a successful interview evaluation, securing 4th position globally in the international Mars Base Challenge."
     ],
     images: ["/placeholder10.png", "/placeholder11.png", "/placeholder12.png", "/placeholder13.png", "/placeholder14.JPG"],
+    videos: ["/Mars Base Design.mp4"],
     isSpecial: false
   },
   {
@@ -58,6 +59,7 @@ const projectsData = [
       "Navigation & Power: Equipped the rover with onboard sensors and cameras for hazard detection, alongside a solar-powered energy system for long-term operational reliability."
     ],
     images: ["/placeholder15.jpeg", "/placeholder16.jpeg","/placeholder17.png", "/placeholder18.png","/placeholder19.JPG"],
+    videos: ["/Lunar Rover .mp4"],
     subSections: [
       {
         title: "ROVER DESIGN CHALLENGE (Analysis)",
@@ -80,6 +82,7 @@ const projectsData = [
       "User Experience: Focused on optimizing usability, ergonomics, and structural design to deliver an enhanced oral care experience."
     ],
     images: ["/placeholder25.png", "/placeholder26.JPG", "/placeholder27.png", "/placeholder28.png", "/placeholder29.png"],
+    videos: ["/eBrush.mp4"],
     isSpecial: false
   },
   {
@@ -94,6 +97,7 @@ const projectsData = [
       "High Capacity: Dries 1000–2000 kg per batch with improved safety, hygiene, and energy efficiency."
     ],
     images: ["/placeholder30.png", "/placeholder31.png", "/placeholder32.png", "/placeholder33.png", "/placeholder34.JPG", "placeholder35.png", 'placeholder36.png'],
+    videos: ["/Grain Dryer.mp4"],
     isSpecial: false
   },
   {
@@ -106,6 +110,7 @@ const projectsData = [
       "Mechanical Innovation: Developed foldable hand rests for enhanced comfort alongside an innovative rotation-to-linear keyboard drawer mechanism."
     ],
     images: ["/placeholder37.png", "/placeholder81.png", "/placeholder39.JPG", "/placeholder40.png", "/placeholder41.png", "placeholder42.png", 'placeholder43.JPG', 'placeholder44.JPG'],
+    videos: ["/Ergo Table.mp4"],
     isSpecial: false
   },
   {
@@ -270,6 +275,34 @@ export default function ProjectsPage() {
                 >
                   {selectedProject.description.map((para, i) => (
                     <p key={i}>{para}</p>
+                  ))}
+                </motion.div>
+              )}
+
+              {/* Staggered Videos Gallery (if any) */}
+              {selectedProject.videos && selectedProject.videos.length > 0 && (
+                <motion.div 
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex flex-col gap-8 md:gap-16 mb-8 md:mb-16"
+                >
+                  {selectedProject.videos.map((vid, i) => (
+                    <motion.div 
+                      key={i} 
+                      variants={imageVariants}
+                      className="w-full bg-gray-100 rounded-3xl overflow-hidden shadow-lg border border-gray-200"
+                    >
+                      <video 
+                        src={vid} 
+                        controls
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-contain"
+                      />
+                    </motion.div>
                   ))}
                 </motion.div>
               )}
