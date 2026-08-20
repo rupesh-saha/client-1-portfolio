@@ -46,7 +46,7 @@ const projectsData = [
       "Global Recognition: Personally presented the project through a successful interview evaluation, securing 4th position globally in the international Mars Base Challenge."
     ],
     images: ["/placeholder10.png", "/placeholder11.png", "/placeholder12.png", "/placeholder13.png", "/placeholder14.JPG"],
-    videos: ["/Mars Base Design.mp4"],
+    videos: ["/mars-base-design.mp4"],
     isSpecial: false
   },
   {
@@ -59,7 +59,7 @@ const projectsData = [
       "Navigation & Power: Equipped the rover with onboard sensors and cameras for hazard detection, alongside a solar-powered energy system for long-term operational reliability."
     ],
     images: ["/placeholder15.jpeg", "/placeholder16.jpeg","/placeholder17.png", "/placeholder18.png","/placeholder19.JPG"],
-    videos: ["/Lunar Rover .mp4"],
+    videos: ["/lunar-rover.mp4"],
     subSections: [
       {
         title: "ROVER DESIGN CHALLENGE (Analysis)",
@@ -110,7 +110,7 @@ const projectsData = [
       "Mechanical Innovation: Developed foldable hand rests for enhanced comfort alongside an innovative rotation-to-linear keyboard drawer mechanism."
     ],
     images: ["/placeholder37.png", "/placeholder81.png", "/placeholder39.JPG", "/placeholder40.png", "/placeholder41.png", "placeholder42.png", 'placeholder43.JPG', 'placeholder44.JPG'],
-    videos: ["/Ergo Table.mp4"],
+    videos: ["/ergo-table.mp4"],
     isSpecial: false
   },
   {
