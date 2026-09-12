@@ -21,20 +21,20 @@ const IntroSec = () => {
 
   const imageReveal = {
     hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)' },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
+    visible: {
+      opacity: 1,
+      scale: 1,
       filter: 'blur(0px)',
-      transition: { duration: 1, ease: "easeOut" } 
+      transition: { duration: 1, ease: "easeOut" }
     }
   };
 
   return (
     <section className="w-full bg-white text-black py-24 md:py-32 px-6 md:px-12 lg:px-20 overflow-hidden relative z-10" id="about">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
+
         {/* LEFT SIDE: The Image */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-6 w-full relative"
           initial="hidden"
           whileInView="visible"
@@ -43,10 +43,10 @@ const IntroSec = () => {
         >
           {/* Subtle decorative background block for depth */}
           <div className="absolute -inset-4 bg-gray-100 rounded-[2rem] -z-10 transform -rotate-3"></div>
-          
+
           <div className="relative aspect-[3/4] w-full sm:w-[90%] md:w-[80%] lg:w-full mx-auto overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src="/IMG_1409.jpg" 
+              src="/IMG_1409.jpg"
               alt="MD IBRAHIM HOSSAIN KHAN"
               fill
               className="object-cover object-center hover:scale-105 transition-transform duration-700"
@@ -57,7 +57,7 @@ const IntroSec = () => {
         </motion.div>
 
         {/* RIGHT SIDE: Intro & Stats */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-6 flex flex-col justify-center"
           variants={containerVariants}
           initial="hidden"
@@ -70,7 +70,7 @@ const IntroSec = () => {
               About Me
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              Hi, I&apos;m MD IBRAHIM <br className="hidden md:block"/> HOSSAIN KHAN
+              Hi, I&apos;m MD IBRAHIM <br className="hidden md:block" /> HOSSAIN KHAN
             </h2>
             <h3 className="text-xl md:text-2xl font-light text-gray-500 italic">
               A passionate engineer, researcher, and problem solver.
@@ -94,7 +94,7 @@ const IntroSec = () => {
               <h4 className="text-sm font-bold text-gray-900 mb-1">B.Sc. Degree</h4>
               <p className="text-sm text-gray-600">Industrial and Production Engineering</p>
             </div>
-            
+
             {/* CGPA Card (Highlighted as requested) */}
             <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900 to-black text-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.25)] hover:-translate-y-1 transition-all duration-300 border border-gray-800">
               <h4 className="text-sm font-bold text-gray-300 mb-1">Academic Standing</h4>
@@ -105,13 +105,13 @@ const IntroSec = () => {
             {/* Role Card */}
             <div className="p-6 rounded-2xl bg-white/50 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
               <h4 className="text-sm font-bold text-gray-900 mb-1">Current Role</h4>
-              <p className="text-sm text-gray-600">Mechanical Design Engineer <br/> @ BJIT Limited</p>
+              <p className="text-sm text-gray-600">Mechanical Design Engineer <br /> @ BJIT Limited</p>
             </div>
 
             {/* Research Focus Card */}
             <div className="p-6 rounded-2xl bg-white/50 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
               <h4 className="text-sm font-bold text-gray-900 mb-1">Research Focus</h4>
-              <p className="text-sm text-gray-600">Material, Design and manufacturing, Ergonomics</p>
+              <p className="text-sm text-gray-600">Materials, Additive Manufacturing, Mechanics, Biomedical</p>
             </div>
           </motion.div>
 
@@ -125,8 +125,8 @@ const IntroSec = () => {
               { name: 'GrabCAD', url: 'https://grabcad.com/md.ibrahim.hossain.khan-1' },
               { name: 'Facebook', url: 'https://www.facebook.com/ibrahimhossain.ibrahim.33/' }
             ].map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.url}
                 className="text-sm font-medium text-gray-500 hover:text-black transition-colors relative group"
               >

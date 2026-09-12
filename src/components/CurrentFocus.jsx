@@ -8,7 +8,7 @@ const focusItems = [
     category: "Manuscript Prep",
     title: "MD Simulation",
     description: "Preparing the manuscript on MD simulation of TMDs material for journal publication.",
-    span: "md:col-span-2", 
+    span: "md:col-span-2",
     delay: 0.1,
   },
   {
@@ -44,6 +44,15 @@ const focusItems = [
 // NEW: Categorized Research Interests Array
 const categorizedInterests = [
   {
+    category: "Materials",
+    items: [
+      "Architected Materials (Lattice Structures, Lightweight Structure Materials, TPMS)",
+      "Metamaterials",
+      "Nano/Smart Materials",
+      "Computational Modeling"
+    ]
+  },
+  {
     category: "Manufacturing",
     items: [
       "Advanced and Additive Manufacturing",
@@ -58,25 +67,18 @@ const categorizedInterests = [
       "Biomedical Device Design (Prosthesis and Orthosis), Assistive Technologies & Biomechanics",
       "Ergonomics (User-centric design), Human Factors Engineering"
     ]
-  },
-  {
-    category: "Materials",
-    items: [
-      "2D Materials (Molecular Dynamics)",
-      "Computational Modeling"
-    ]
   }
 ];
 
 const CurrentFocus = () => {
   return (
     <section className="w-full bg-[#fafafa] text-black py-24 md:py-32 px-6 md:px-12 lg:px-20 border-y border-gray-200 overflow-hidden relative">
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -116,7 +118,7 @@ const CurrentFocus = () => {
                     {item.title}
                   </h3>
                 </div>
-                
+
                 <p className="text-base md:text-lg text-gray-500 font-light leading-relaxed group-hover:text-black transition-colors duration-300 mt-8">
                   {item.description}
                 </p>
@@ -128,14 +130,14 @@ const CurrentFocus = () => {
         </div>
 
         {/* NEW: Categorized Research Interests Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           className="flex flex-col items-center md:items-start border-t border-gray-200 pt-12 md:pt-16"
         >
           <div className="flex flex-col md:flex-row items-start gap-12 w-full">
-            
+
             {/* Title for the section */}
             <div className="md:w-1/3 flex-shrink-0 text-center md:text-left sticky top-32">
               <h3 className="text-2xl font-bold text-black mb-2">Core Research Interests</h3>
@@ -150,7 +152,7 @@ const CurrentFocus = () => {
                   <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4 text-center md:text-left border-b border-gray-200 pb-2">
                     {group.category}
                   </h4>
-                  
+
                   {/* Category Pills */}
                   <div className="flex flex-wrap justify-center md:justify-start gap-3">
                     {group.items.map((interest, index) => (
@@ -170,7 +172,7 @@ const CurrentFocus = () => {
                 </div>
               ))}
             </div>
-            
+
           </div>
         </motion.div>
 

@@ -1,10 +1,16 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import gsap from 'gsap';
 
 const researchCategories = [
+  {
+    category: "MATERIALS",
+    interests: ["Architected Materials (Lattice Structures, Lightweight Structure Materials, TPMS)",
+      "Metamaterials",
+      "Nano/Smart Materials",
+      "Computational Modeling"]
+  },
   {
     category: "MANUFACTURING",
     interests: ["Advanced and Additive Manufacturing", "Smart and Hybrid Manufacturing"]
@@ -12,15 +18,11 @@ const researchCategories = [
   {
     category: "DESIGN",
     interests: [
-      "Engineering Design & Solid Mechanics", 
-      "Compliant Mechanisms, Topology Optimization", 
-      "Biomedical Device Design (Prosthesis and Orthosis), Assistive Technologies & Biomechanics", 
+      "Engineering Design & Solid Mechanics",
+      "Compliant Mechanisms, Topology Optimization",
+      "Biomedical Device Design (Prosthesis and Orthosis), Assistive Technologies & Biomechanics",
       "Ergonomics (User-centric design), Human Factors Engineering"
     ]
-  },
-  {
-    category: "MATERIALS",
-    interests: ["2D Materials (Molecular Dynamics)", "Computational Modeling"]
   }
 ];
 
@@ -32,53 +34,6 @@ const socialLinks = [
 ];
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isHoveringSubmit, setIsHoveringSubmit] = useState(false);
-  const glowRef = useRef(null);
-  const containerRef = useRef(null);
-
-  // GSAP Mouse Follower Effect
-  useEffect(() => {
-    const container = containerRef.current;
-    const glow = glowRef.current;
-
-    if (!container || !glow) return;
-
-    const handleMouseMove = (e) => {
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      gsap.to(glow, {
-        x: x - 250,
-        y: y - 250,
-        duration: 0.8,
-        ease: "power3.out",
-        opacity: isHoveringSubmit ? 0.6 : 0.2,
-        scale: isHoveringSubmit ? 1.1 : 1,
-      });
-    };
-
-    container.addEventListener("mousemove", handleMouseMove);
-    return () => container.removeEventListener("mousemove", handleMouseMove);
-  }, [isHoveringSubmit]);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message ready to send! Hook this up to an API.");
-  };
-
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
@@ -91,15 +46,8 @@ export default function ContactPage() {
 
   return (
     <div
-      ref={containerRef}
       className="min-h-screen bg-[#f5f5f7] text-black pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 lg:px-20 overflow-hidden relative font-sans selection:bg-black selection:text-white"
     >
-      {/* GSAP Mouse Follower Orb */}
-      <div
-        ref={glowRef}
-        className="absolute top-0 left-0 w-[500px] h-[500px] bg-gray-400 rounded-full blur-[120px] opacity-0 pointer-events-none mix-blend-multiply z-0"
-        style={{ transform: "translate(-50%, -50%)" }}
-      ></div>
 
       {/* Subtle Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none z-0"></div>
@@ -163,7 +111,7 @@ export default function ContactPage() {
         </motion.div>
 
         {/* SECTION 1.5: Core Research Interests */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -242,119 +190,6 @@ export default function ContactPage() {
           </div>
         </motion.div>
 
-
-        {/* SECTION 3: The Pure White Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-[2rem] p-8 md:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group"
-        >
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-2">Send a Message</h2>
-            <p className="text-gray-500 font-light">I'll get back to you as soon as possible.</p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="flex flex-col gap-10 relative z-10">
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <div className="relative">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
-                  placeholder="John Doe"
-                />
-                <label
-                  htmlFor="name"
-                  className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
-                >
-                  What's your name?
-                </label>
-              </div>
-
-              <div className="relative">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
-                  placeholder="john@example.com"
-                />
-                <label
-                  htmlFor="email"
-                  className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
-                >
-                  Your email address
-                </label>
-              </div>
-            </div>
-
-            <div className="relative">
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
-                placeholder="Collaboration"
-              />
-              <label
-                htmlFor="subject"
-                className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
-              >
-                Subject
-              </label>
-            </div>
-
-            <div className="relative">
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full bg-transparent border-b border-gray-300 py-3 text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent resize-none"
-                placeholder="Tell me about your project..."
-              ></textarea>
-              <label
-                htmlFor="message"
-                className="absolute left-0 top-3 text-gray-400 text-base transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-black peer-valid:-top-5 peer-valid:text-xs peer-valid:text-gray-500 cursor-text"
-              >
-                Tell me about your project...
-              </label>
-            </div>
-
-            <div
-              className="mt-6 flex justify-center"
-              onMouseEnter={() => setIsHoveringSubmit(true)}
-              onMouseLeave={() => setIsHoveringSubmit(false)}
-            >
-              <button
-                type="submit"
-                className="w-full md:w-auto bg-black text-white font-bold tracking-wide py-4 px-12 rounded-full flex items-center justify-center gap-3 hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
-              >
-                Send Message
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-              </button>
-            </div>
-
-          </form>
-        </motion.div>
 
       </div>
     </div>

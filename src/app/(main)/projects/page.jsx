@@ -143,7 +143,7 @@ export default function ProjectsPage() {
   const containerRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // GSAP for initial grid reveal
+  // GSAP for initial grid reveal (runs once on mount)
   useEffect(() => {
     const elements = gsap.utils.toArray('.project-card');
     elements.forEach((el) => {
@@ -156,7 +156,11 @@ export default function ProjectsPage() {
       );
     });
 
-    // Disable body scroll when modal is open
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+  }, []);
+
+  // Disable body scroll when modal is open
+  useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
     } else {
